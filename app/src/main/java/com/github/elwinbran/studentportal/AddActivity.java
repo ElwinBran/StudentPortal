@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class AddActivity extends AppCompatActivity
@@ -23,10 +24,10 @@ public class AddActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 Intent previousScreen = new Intent(getApplicationContext(), MainActivity.class);
-                StringBuilder titleBuilder = new StringBuilder(((TextView)findViewById(R.id.titleInput)).getText());
+                StringBuilder titleBuilder = new StringBuilder(((EditText)findViewById(R.id.titleInput)).getText());
                 String title = titleBuilder.toString();
                 previousScreen.putExtra(Portal.TITLE_IDENTIFIER, title);
-                StringBuilder urlBuilder = new StringBuilder(((TextView)findViewById(R.id.urlInput)).getText());
+                StringBuilder urlBuilder = new StringBuilder(((EditText)findViewById(R.id.urlInput)).getText());
                 String url = urlBuilder.toString();
                 previousScreen.putExtra(Portal.URL_IDENTIFIER, url);
                 setResult(Activity.RESULT_OK, previousScreen);
